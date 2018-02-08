@@ -1,0 +1,126 @@
+.mainWrapper {
+    width:575px;
+    height:800px;
+    box-sizing: border-box;
+    border-style:solid;
+    border-width:1px;
+    border-radius:15px;
+    margin:15px;    
+}
+
+.contentWrapper {
+    box-sizing: border-box;
+    width:550px;
+    height:550px;
+    border-style:solid;
+    border-width:1px;
+    border-radius:15px;
+    margin:10px;
+}
+
+#canvasesdiv {
+    position:relative; 
+}
+
+.canvas {
+    position:absolute; 
+    left:50px;
+    top:50px;
+}
+
+#layer1 {  
+    position:absolute; 
+    left:50px;
+    top:50px;
+    z-index: 1; 
+}
+
+#layer2 {
+    position:absolute; 
+    left:50px;
+    top:50px;  
+    z-index: 2; 
+}
+
+#layer3 { 
+    position:absolute; 
+    left:50px;
+    top:50px;  
+    z-index: 3; 
+}
+
+.canvasUnit {
+    box-sizing: border-box;    
+    width:480px;
+    height:480px;
+   /* border-style:solid;
+    border-width:1px;*/
+    margin:10px
+}
+
+.actionUnit {    
+    box-sizing: border-box;    
+    margin:10px;
+    padding-top:20px;
+}
+
+
+.beginButton {
+    box-sizing: border-box; 
+    margin:auto;
+}
+
+#actionArea {    
+    box-sizing: border-box; 
+}
+
+btn {
+    padding:10px;
+}
+
+#dispActionCurrent {
+    font-size:16px;
+}
+
+#dispActionLast {
+    font-size:14px;
+    color:lightgray;
+}
+
+/******* TOOLTIP *******/
+
+ .tooltip {
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted black;
+    }
+
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 150%;
+        left: 50%;
+        margin-left: -60px;
+    }
+
+    .tooltip .tooltiptext::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: black transparent transparent transparent;
+    }
+
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+    }

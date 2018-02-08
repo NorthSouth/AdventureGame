@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Nothin Venture</title>
+
+    <link rel="stylesheet" href="styles/reset.css">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/modal.css">
+
+    <!-- Font Awesome CDN link here -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+    <!--Loop an auto-playing background audio track
+    javascript will set the starting volume-->
+
+    <audio autoplay loop id="myAudio">
+        <source src="audio/music-03-Daniel_Birch-Forgotten_Landscape.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="mainWrapper" id="appArea">
+        <div class="contentWrapper">
+            <!--  define 3 layered canvases to define the game board  -->
+            <section class="canvasUnit" id="canvasArea">
+                <div id="canvasesdiv">
+                    <canvas id="layer1" width="500" height="500">
+                This text is displayed if your browser does not support HTML5 Canvas.
+                    </canvas>
+                    <canvas id="layer2" width="500" height="500">
+                This text is displayed if your browser does not support HTML5 Canvas.
+                    </canvas>
+                    <canvas id="layer3" width="500" height="500">
+                This text is displayed if your browser does not support HTML5 Canvas.
+                    </canvas>
+                </div>
+            </section>
+            <p></p>
+            <br>
+
+            <!--  Set up the UI  -->
+            <section class="actionUnit">
+                <div id="actionArea">
+
+                    <!--Command Line Area (Input)-->
+                    <textarea id="info" rows="1" cols="60">&nbsp;What would you like to do? > </textarea>
+
+                    <!--info button so user can be reminded of available commands-->
+                    <button type="button" class="btn btn-secondary mb-4 ml-4" data-container="body" data-toggle="popover" data-placement="top" data-trigger="focus" style="background-color: #000000;" title="Commands" data-content="Move: n,s,e,w Other: q">
+                    <i id="infoToolTip" class="fa fa-question-circle"></i>            
+                </button>
+
+                    <!--Output Field-->
+                    <h4 id="dispActionLast">&nbsp;</h4>
+                    <h4 id="dispActionCurrent">&nbsp;</h4>
+                </div>
+
+                <!--START-->
+                <div class="beginButton">
+                    <button type="button" id="startButton" class="btn btn-primary btn-block" onclick="ventureGame()">PRESS TO BEGIN</button>
+                </div>
+            </section>
+
+            <!-- MODAL WINDOW -->
+            <!--Displayed when an even interrupts the regular flow of the game
+            (e.g., finding TREASURE or encountering a TRAP)-->
+            
+            <div id="modal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="media">
+                        <div class="media-left">
+                            <img id="modalImage" src="images/skull-crossbones2.svg" alt="skullAndCrossbones" class="mr-3" height="50" width="50">
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading" id="modalHeading">It's a trap!</h4>
+                            <p id="modalText">Something unexpected has befallen you...</p>
+                        </div>
+                    </div>
+
+                    <div class="btn-group pt-2" role="group" id="modalButtonGroup" >
+                        <button type="button" class="btn btn-secondary" onclick="endGame()">Quit</button>
+                        <button type="button" class="btn btn-secondary" onclick="restartGame()">Replay</button>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    <!--ENABLE POPOVER FUNCTIONALITY-->
+
+    <script>
+        $(document).ready(function() {
+            $('[data-toggle="popover"]').popover();
+        });
+
+        $('.popover-dismiss').popover({
+            trigger: 'focus'
+        })
+    </script>
+
+    <!-- JavaScript files -->
+    <script src="/js/main.js"></script>
+    <script src="/js/modal.js"></script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
