@@ -1,9 +1,6 @@
 // Get the modal
 var modal = document.getElementById('modal');
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
 
 function showModal() {
   modal.style.display = "block";
@@ -17,7 +14,8 @@ function closeModal() {
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
   if (event.target == modal) {
-    modal.style.display = "none";
+   /* modal.style.display = "none";*/
+    endGame();
   }
 }
 
@@ -30,7 +28,6 @@ function restartGame() {
   for (i = 0; i < ((maxXIndex + 1) * (maxYIndex + 1)); i++) {
     obstacles.push(0);
   }
-
   startGame();
 }
 
