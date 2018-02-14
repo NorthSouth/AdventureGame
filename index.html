@@ -54,18 +54,24 @@
       <!--  Set up the UI  -->
       <section class="actionUnit">
         <div id="actionArea">
-
-          <!--Command Line Area (Input)-->
-          <textarea id="info" rows="1" cols="60">&nbsp;What would you like to do? > </textarea>
-
-          <!--info button so user can be reminded of available commands-->
-          <button type="button" class="btn btn-secondary mb-4 ml-4" data-container="body" data-toggle="popover" data-placement="top" data-trigger="focus" style="background-color: #000000;" title="Commands" data-content="Move: n,s,e,w Other: q">
+          <div class="row">
+            <div class="col pt-1">
+              <!--Command Line Area (Input)-->
+              <textarea id="info" rows="1" cols="50">&nbsp;What would you like to do? > </textarea>
+            </div>
+            <div class="col">
+              <!--info button so user can be reminded of available commands-->
+              <button type="button" class="btn btn-secondary " data-container="body" data-toggle="popover" data-placement="top" data-trigger="focus" style="background-color: #000000;" title="Commands" data-content="Move: n,s,e,w Other: q">
                     <i id="infoToolTip" class="fa fa-question-circle"></i>            
                 </button>
+            </div>
 
+          </div>
           <!--Output Field-->
+          <br>
           <h4 id="dispActionLast">&nbsp;</h4>
           <h4 id="dispActionCurrent">&nbsp;</h4>
+
         </div>
 
         <!--START-->
